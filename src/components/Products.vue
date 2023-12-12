@@ -87,18 +87,7 @@ export default {
             return (this.selectedMake.toLowerCase() != "all products") || (this.searchProducts) ? (this.products.filter(item =>item.make.toLowerCase().includes(this.searchProducts.toLowerCase())) || 
             this.products.filter(item =>item.make.toLowerCase().includes(this.selectedMake.toLowerCase()))) : this.products
         },
-    },
-    methods: {
-        retrieveProduct() {
-            this.renderProducts.filter( item => {
-                return item.make.toLowerCase().includes(this.searchProducts.toLowerCase())   
-            })
-        }
-    },
-    mounted() {
-        this.retrieveProduct()
     }
-
 }
 </script>
 
