@@ -76,6 +76,7 @@ export default {
             ],
             selectedMake: 'All Products',
             searchProducts: '',
+            otherItem : null
         }
     },
     computed: {
@@ -83,12 +84,15 @@ export default {
             return ['All products'].concat(Array.from(new Set(this.products.map( item => item.make))))
         },
         renderProducts() {
-            return this.selectedMake.toLowerCase() != "all products" ? this.products.filter(item =>item.make.toLowerCase().includes(this.selectedMake.toLowerCase())) : this.products
-        }
+            return (this.selectedMake.toLowerCase() != "all products") || (this.searchProducts) ? (this.products.filter(item =>item.make.toLowerCase().includes(this.searchProducts.toLowerCase())) || 
+            this.products.filter(item =>item.make.toLowerCase().includes(this.selectedMake.toLowerCase()))) : this.products
+        },
     },
     methods: {
         retrieveProduct() {
-            this.renderProducts.filter( item => item.make.toLowerCase().includes(this.searchProducts.toLowerCase())) 
+            this.renderProducts.filter( item => {
+                return item.make.toLowerCase().includes(this.searchProducts.toLowerCase())   
+            })
         }
     },
     mounted() {
