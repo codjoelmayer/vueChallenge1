@@ -1,15 +1,13 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Products/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Products from './components/Products.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Products
   }
 }
 </script>
@@ -22,5 +20,19 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.prodCard {
+  width: 18rem;
+}
+.prodCard :is(>*, img){
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.expensive {
+  font-weight: bolder;
+  color: darkkhaki;
+}
+.cheap {
+  color: black;
 }
 </style>
