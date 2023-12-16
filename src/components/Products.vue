@@ -75,8 +75,7 @@ export default {
                 }
             ],
             selectedMake: 'All Products',
-            searchProducts: '',
-            otherItem : null
+            searchProducts: ''
         }
     },
     computed: {
