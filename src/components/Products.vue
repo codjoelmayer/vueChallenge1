@@ -80,7 +80,7 @@ export default {
     },
     computed: {
         filterByMake() {
-            return ['All products'].concat(Array.from(new Set(this.products.map( item => item.make))))
+            return ['All Products'].concat(Array.from(new Set(this.products.map( item => item.make))))
         },
         renderProducts() {
             return this.selectedMake.toLowerCase() != "all products" ? this.products.filter(item =>item.make.toLowerCase().includes(this.selectedMake.toLowerCase())) : this.searchProducts.toLowerCase() ? this.products.filter(item =>item.make.toLowerCase().includes(this.searchProducts.toLowerCase())) :
